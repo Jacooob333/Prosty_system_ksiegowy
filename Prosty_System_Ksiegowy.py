@@ -23,7 +23,7 @@ magazyn_komisu = [
     {
         "nazwa_roweru": "Maxim mc",
         "rok_produkcji": 2021,
-        "ilosc_dostepnych_egzemplarzy": 1,
+        "ilosc_dostepnych_egzemplarzy": 2,
         "cena_zakupu": 900.0
     },
     {
@@ -46,7 +46,7 @@ while True:
                      "7. Historia działań programu.\n"
                      "8. Zakończenie działania programu!\n")
 
-    if wyb_uzyt in ("1", "Zmiana salda komisu."):
+    if wyb_uzyt in ("1", "Zmiana salda komisu"):
         kwota = float(input("Proszę podać kwotę, o jaką zamierzasz zmienić saldo komisu: "))
         if saldo_komisu_rowerowego + kwota < 0:
             print("Niestety środki na koncie są niewystarczające!")
@@ -55,7 +55,7 @@ while True:
             saldo_komisu_rowerowego += kwota
             historia.append(f"Saldo komisu zostało zmienione o {kwota}")
 
-    elif wyb_uzyt == "2":
+    elif wyb_uzyt in ("2", "Sprzedaż Roweru"):
         nazwa_roweru = input("Proszę podać pełną nazwę roweru, którego masz zamiar zakupić z magazynu:")
         rok_produkcji = int(input("Proszę podać rok produkcji roweru, którego masz zamiar zakupić z magazynu:"))
         znaleziono_rower = False
@@ -75,7 +75,7 @@ while True:
             print("Nie posiadamy takiego roweru!")
             historia.append("Próba zakpu roweru, którego nie mieliśmy w komisie!")
 
-    elif wyb_uzyt == "3":
+    elif wyb_uzyt in ("3", "Zakup Roweru do magazynu"):
         nazwa_roweru = input("Proszę podać pełną nazwę roweru, którego masz zamiar zakupić do magazynu:")
         rok_produkcji = int(input("Proszę podać rok produkcji roweru, którego masz zamiar zakupić do magazynu:"))
         ilosc_dostepnych_egzemplarzy = int(input("Proszę podać ilość rowerów, które masz zamiar zakupić do magazynu:"))
@@ -96,15 +96,14 @@ while True:
         saldo_komisu_rowerowego -= ilosc_dostepnych_egzemplarzy * cena_zakupu
         historia.append(f"Pomyślne zakupienie roweru/rowerów przez komis!")
 
-    elif wyb_uzyt == "4":
+    elif wyb_uzyt in ("4", "Sprawdzenie stanu konta komisu"):
         print(saldo_komisu_rowerowego)
-        historia.append(f"Wyświetlenie salda komisu!")
 
-    elif wyb_uzyt == "5":
+    elif wyb_uzyt in ("5", "Całkowity stan magazynu"):
         for rower in magazyn_komisu:
             print(rower)
 
-    elif wyb_uzyt == "6":
+    elif wyb_uzyt in ("6", "Szczegóły produktu"):
         wybrany_rower = input("Podaj proszę nazwę roweru do wyszukania z magazynu: ")
         znaleziono_rower = False
         for rower in magazyn_komisu:
@@ -115,7 +114,7 @@ while True:
         if not znaleziono_rower:
             print("Nie posiadamy takiego roweru!")
 
-    elif wyb_uzyt == "7":
+    elif wyb_uzyt in ("7", "Historia działań programu"):
         od = input("Proszę podaj początkowy zakres historii działań: ")
         do = input("Proszę podaj końcowy zakres historii działań: ")
 
@@ -137,7 +136,7 @@ while True:
 
 
 
-    elif wyb_uzyt == "8":
+    elif wyb_uzyt in ("8", "Zakończenie działania programu"):
         break
 
     else:
