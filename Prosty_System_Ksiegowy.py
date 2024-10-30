@@ -27,7 +27,7 @@ magazyn_komisu = [
         "cena_zakupu": 900.0
     },
     {
-        "nazwa_roweru": "Roomet_rambler",
+        "nazwa_roweru": "Roomet rambler",
         "rok_produkcji": 2024,
         "ilosc_dostepnych_egzemplarzy": 10,
         "cena_zakupu": 1050.0
